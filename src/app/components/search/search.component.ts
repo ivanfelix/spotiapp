@@ -8,7 +8,7 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class SearchComponent {
 
-  resultadoCanciones:any[] = [];
+  artistas:any[] = [];
 
   constructor(
     private http: HttpClient,
@@ -21,7 +21,7 @@ export class SearchComponent {
     this.spotify.buscar(termino)
     .subscribe((data:any) =>{
       console.log(data);
-      this.resultadoCanciones = data.artists.items;
+      this.artistas = data;
     });
   }
 
